@@ -3,11 +3,11 @@ import Link from 'next/link';
 import fetch from 'isomorphic-unfetch';
 
 //Name of news related Source
-const source = '';
+const source = 'Business';
 
 const apikey = 'b63ca222c0744b1b9a3fd6d6e4392d59'
 //Include any news api from the link
-const url = ''
+const url = 'https://newsapi.org/v2/everything?sources=financial-post&apiKey=b63ca222c0744b1b9a3fd6d6e4392d59'
 
 // Pass this content as 'props' to child components
 const News = props => (
@@ -21,7 +21,7 @@ const News = props => (
               <img src={article.urlToImage} alt="article image" className="img-article"></img>
               <p>{article.descritpion}</p>
               <p>{article.content}</p>
-              <p><Link href="/story">Read More</Link></p>
+              <p><Link href={article.url}>Read More</Link></p>
             </section>
           ))}
         </div>
@@ -41,7 +41,8 @@ const News = props => (
           }
 
           .img-article {
-            max-witdh: 10px;
+            height: auto;
+            max-width: 100%;
           }
           
         `}</style>

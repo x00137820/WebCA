@@ -9,7 +9,13 @@ const Nav = () => (
        <nav>
            <ul>
             <li><Link href="/index"><a>Home</a></Link></li>
-            <li><Link href="/news"><a>News</a></Link></li>
+            <li className="dropdown">
+                <a href="javascript:void(0)" className="dropbtn">News</a>
+                <div className="dropdown-content">
+                <Link href="/news"><a>News</a></Link>
+                </div>
+            </li>
+            <li><Link href="/about"><a>About</a></Link></li>
            </ul>
        </nav>
        {/* Define css for this page or component */}
@@ -60,6 +66,45 @@ const Nav = () => (
         nav ul li a:hover {
             color: white;
         }
+
+        li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: black;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: black}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 
         `}</style>
    </div> 
